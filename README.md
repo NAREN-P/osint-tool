@@ -10,7 +10,7 @@ $ sudo su
 
 To run the file as excutable use the following command
 
-$ chmod -x recontool.sh
+$ chmod -x recontool1.sh
 
 step3:
  execute the following command
