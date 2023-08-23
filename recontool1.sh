@@ -2,8 +2,6 @@
 
 Domain=$1
 
-#RED="/033[1;31m"
-#RESET="/033[om"
 
 info_path=$Domain/info
 subdomain_path=$Domain/subdomain
@@ -43,8 +41,7 @@ assetfinder $Domain | grep $Domain > $subdomain_path/subdomain.txt
 echo -e " [+]  chekking what is alive for ${Domain} "
 cat $subdomain_path/subdomain.txt | grep $Domain | sort -u | httprobe -prefer-https | grep https | sed 's/https\?:\/\///'| tee -a $subdomain_path/alive.txt
 
-echo -e " [+]  finding sccreeenshort for alive in ${Domain} "
-gowitness file -f $subdomain_path/alive.txt -P $screenshort_path/  --no-http
+
 
 
 
